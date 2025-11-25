@@ -1,0 +1,9 @@
+{
+  "name": "Imposter Game",
+  "short_name": "Imposter",
+  "display": "standalone",
+  "start_url": ".",
+  "background_color": "#0d0f1f",
+  "theme_color": "#0d0f1f",
+  "icons": []
+}

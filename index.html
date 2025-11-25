@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imposter Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon.ico" sizes="any">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <h1>Imposter Game</h1>
+      <p class="lede">После раздачи по очереди описывайте тему одном словом. Играйте до тех пор, пока единогласно не будет выбран шпион, либо пока шпион не угадает тему.</p>
+    </header>
+
+    <section id="setup" class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Настройте раунд</h2>
+        </div>
+      </div>
+
+      <div class="field slider">
+        <div class="slider-row">
+          <span>Количество игроков</span>
+          <span id="playerValue" class="pill muted">5</span>
+        </div>
+        <input id="playerCount" type="range" min="3" max="20" value="5" step="1" aria-label="Количество игроков">
+        <p class="hint">Одному игроку вместо темы выпадет "Imposter".</p>
+      </div>
+
+      <button id="start" class="primary full">Раздать тему</button>
+    </section>
+
+    <section id="dealing" class="panel hidden">
+      <div class="panel-header">
+        <div>
+          <h2 id="playerLabel">Игрок 1</h2>
+        </div>
+        <div class="pill" id="remaining"></div>
+      </div>
+
+      <div class="card" id="secretCard">
+        <div class="card-face placeholder" id="placeholder">Зажмите, чтобы увидеть тему</div>
+        <div class="card-face revealed" id="cardValue"></div>
+      </div>
+
+      <p class="hint">Затем передайте телефон следующему.</p>
+
+      <button id="restart" class="ghost full">Вернуться</button>
+    </section>
+
+    <section id="complete" class="panel hidden">
+      <div class="panel-header">
+        <div>
+          <h2>Все карты разданы</h2>
+        </div>
+      </div>
+      <p class="lede">Обсудите и найдите шпиона. Удачи!</p>
+      <button class="primary full mar" id="restartFinal">Начать заново</button>
+      <button class="ghost full" id="backFromComplete">Вернуться</button>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
